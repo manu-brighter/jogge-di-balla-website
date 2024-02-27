@@ -10,8 +10,13 @@
 
 @font-face {
   font-family: $roboto;
-  src: url();
+  src: url('@/assets/fonts/Roboto-Regular.ttf');
   font-weight: 500;
+}
+
+body,
+html {
+  background-color: $second;
 }
 
 </style>
