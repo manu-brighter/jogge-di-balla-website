@@ -3,9 +3,20 @@
 </script>
 
 <template>
-<h1>Jogge di Balla</h1>
+
 </template>
 
-<style scoped>
+<style lang="scss">
+
+@font-face {
+  font-family: $roboto;
+  src: url('@/assets/fonts/Roboto-Regular.ttf');
+  font-weight: 500;
+}
+
+body,
+html {
+  background-color: $second;
+}
 
 </style>
