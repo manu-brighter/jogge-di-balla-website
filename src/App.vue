@@ -1,3 +1,12 @@
+<template>
+    <main>
+
+        <Silvester2Timer />
+
+    </main>
+
+</template>
+
 <script>
 
 import Clock from '@/components/Clock.vue';
@@ -6,21 +15,10 @@ import Silvester2Timer from "@/components/Silvester2Timer.vue";
 export default {
     components: {
         Silvester2Timer,
-        Clock
     }
 }
 
 </script>
-
-<template>
-    <main>
-
-        <Silvester2Timer />
-<!--        <Clock />-->
-<!--        <img src="@/assets/images/cursed-goomba.png">-->
-    </main>
-
-</template>
 
 <style lang="scss">
 
