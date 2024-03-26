@@ -1,9 +1,11 @@
 <script>
 
 import Clock from '@/components/Clock.vue';
+import Silvester2Timer from "@/components/Silvester2Timer.vue";
 
 export default {
     components: {
+        Silvester2Timer,
         Clock
     }
 }
@@ -12,8 +14,10 @@ export default {
 
 <template>
     <main>
+
+        <Silvester2Timer />
 <!--        <Clock />-->
-        <img src="@/assets/images/cursed-goomba.png">
+<!--        <img src="@/assets/images/cursed-goomba.png">-->
     </main>
 
 </template>
@@ -28,7 +32,7 @@ export default {
 
 body,
 html {
-    background-color: $second;
+    background-color: $ciWhite;
     font-size: 10px;
     width: 100%;
 	height: 100%;
