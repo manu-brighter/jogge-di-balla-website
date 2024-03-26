@@ -8,8 +8,6 @@
 </template>
 
 <script>
-
-import Clock from '@/components/Clock.vue';
 import Silvester2Timer from "@/components/Silvester2Timer.vue";
 
 export default {
