@@ -12,7 +12,8 @@ export default {
 
 <template>
     <main>
-        <Clock />
+<!--        <Clock />-->
+        <img src="@/assets/images/cursed-goomba.png">
     </main>
 
 </template>

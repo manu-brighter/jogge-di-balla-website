@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "moment": "^2.30.1",
     "sass": "^1.71.1",
     "vue": "^3.4.15"
   },
