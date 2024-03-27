@@ -35,7 +35,7 @@ export default defineComponent({
         // Tomorrow's date at 00:00:00
         const swissCountdownDate = new Date();
         swissCountdownDate.setDate(currentDate.getDate());
-        swissCountdownDate.setHours(12, 6, 1, 0); // set silvester time here
+        swissCountdownDate.setHours(24, 0, 1, 0); // set silvester time here
 
         // One hour before
         const greekCountdownDate = new Date();
