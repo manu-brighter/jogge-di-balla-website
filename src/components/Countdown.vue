@@ -28,14 +28,14 @@ export default defineComponent({
     components: {
 
     },
-    setup() {
+    setup(props, context) {
         // Current date
         const currentDate = new Date();
 
         // Tomorrow's date at 00:00:00
         const swissCountdownDate = new Date();
         swissCountdownDate.setDate(currentDate.getDate());
-        swissCountdownDate.setHours(16, 0, 1, 0); // set silvester time here
+        swissCountdownDate.setHours(12, 6, 1, 0); // set silvester time here
 
         // One hour before
         const greekCountdownDate = new Date();
@@ -55,11 +55,16 @@ export default defineComponent({
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
             const seconds = Math.floor((difference % (1000 * 60)) / 1000)
+            if (hours === 0 && minutes === 0 && seconds === 0){
+                context.emit('start-countdown', true);
+            }
             return { hours, minutes, seconds }
         }
 
         function changeNextSilvester(newName) {
-            nextSilvesterName.value = newName;
+            if (nextSilvesterName.value !== newName){
+                nextSilvesterName.value = newName;
+            }
         }
 
 
