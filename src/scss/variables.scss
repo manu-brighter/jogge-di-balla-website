@@ -1,11 +1,9 @@
-$prime: #ff6e48;
-$ciBlue: #00fff1;
-$ciRed: #ff00aa;
-$ciGreen: #46fcb4;
-$ciWhite: #ffffff;
-$second: #0c1016;
-$ciGrey: darken(
-  $color: $ciWhite,
+$sillachsPink: #DD859A;
+$silViolet: #AF90DE;
+$silRot: #FF3131;
+$silTuerkis: #01949A;
+$silVioletDark: darken(
+  $color: $silViolet,
   $amount: 40%,
 );
 

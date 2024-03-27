@@ -1,9 +1,11 @@
 <template>
     <main>
-        <v-container>
-            <Clock />
-            <Silvester2Timer />
-        </v-container>
+        <div class="background-container">
+            <v-container>
+                <Clock />
+                <Silvester2Timer />
+            </v-container>
+        </div>
     </main>
 
 </template>
@@ -16,6 +18,11 @@ export default {
     components: {
         Silvester2Timer,
         Clock
+    },
+    data() {
+        return {
+            darkModeEnabled: true // Set to true to enable dark mode, false for light mode
+        };
     }
 }
 
@@ -29,21 +36,12 @@ export default {
     font-weight: 500;
 }
 
-body,
-html {
-    //background-color: $ciWhite;
-    //font-size: 10px;
-    //width: 100%;
-	//height: 100%;
-    //margin: 0;
-	//padding: 0;
-    //display: flex;
-	//justify-content: center;
-	//align-items: center;
-}
-
-* {
-	//box-sizing: border-box;
+.background-container {
+    /* Set background image */
+    background-image: url('@/assets/images/background-sanft.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust height as needed */
 }
 
 </style>
