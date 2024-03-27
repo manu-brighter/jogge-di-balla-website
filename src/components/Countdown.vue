@@ -56,7 +56,7 @@ export default defineComponent({
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
             const seconds = Math.floor((difference % (1000 * 60)) / 1000)
             if (hours === 0 && minutes === 0 && seconds === 0){
-                context.emit('start-countdown', true);
+                context.emit('start-countdown');
             }
             return { hours, minutes, seconds }
         }

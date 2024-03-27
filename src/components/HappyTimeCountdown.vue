@@ -26,11 +26,10 @@ export default defineComponent({
         }
     },
     components: {
-
     },
-    setup(props) {
-        const minutes = ref(15);
-        const seconds = ref(0);
+    setup(props, context) {
+        const minutes = ref(0);
+        const seconds = ref(10);
 
         watchEffect(() => {
             if (props.startCountdown) {
@@ -38,7 +37,7 @@ export default defineComponent({
                     if (seconds.value === 0) {
                         if (minutes.value === 0) {
                             clearInterval(interval);
-                            // Countdown finished
+                            context.emit('countdown-finished')
                         } else {
                             minutes.value--;
                             seconds.value = 59;

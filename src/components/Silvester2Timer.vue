@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col cols="12">
-                <HappyTimeCountdown :startCountdown="startCountdown" />
+                <HappyTimeCountdown @countdown-finished="handleCountdownFinshed" :startCountdown="startCountdown" />
             </v-col>
             <v-col cols="12">
                 <Countdown @start-countdown="handleStartCountdown" />
@@ -27,9 +27,11 @@ export default defineComponent({
         return { startCountdown };
     },
     methods: {
-        // Event handler for the 'button-clicked' event
-        handleStartCountdown(bool) {
-            this.startCountdown = bool;
+        handleStartCountdown() {
+            this.startCountdown = true;
+        },
+        handleCountdownFinshed() {
+            this.startCountdown = false;
         }
     }
 })
