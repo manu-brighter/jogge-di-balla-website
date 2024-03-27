@@ -1,12 +1,8 @@
 <template>
     <v-container>
         <v-row>
-            <v-col cols="12">
-                <HappyTimeCountdown @countdown-finished="handleCountdownFinshed" :startCountdown="startCountdown" />
-            </v-col>
-            <v-col cols="12">
-                <Countdown @start-countdown="handleStartCountdown" />
-            </v-col>
+            <HappyTimeCountdown @countdown-finished="handleCountdownFinshed" :startCountdown="/*startCountdown*/true" />
+            <Countdown @start-countdown="handleStartCountdown" />
         </v-row>
     </v-container>
 </template>

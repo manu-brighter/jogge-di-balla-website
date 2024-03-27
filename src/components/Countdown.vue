@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row justify="center">
-            <v-col cols="12" sm="6" md="12">
+            <v-col cols="12" sm="6" md="6">
                 <v-card>
                     <v-card-title class="text-center">Countdown to Silvester 2</v-card-title>
                     <v-skeleton-loader v-if="isNaN(hours)" type="paragraph" />
