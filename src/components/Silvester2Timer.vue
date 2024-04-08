@@ -34,5 +34,5 @@ export default defineComponent({
 </script>
 
 <style>
-/* Your component-specific styles go here */
+
 </style>

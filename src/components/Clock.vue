@@ -1,18 +1,19 @@
+<!-- Clock.vue -->
 <template>
     <v-container>
-        <v-row justify="center">
-            <v-col cols="12" sm="6" md="4">
-                <v-card>
-                    <v-card-title class="text-center">Current Time</v-card-title>
-                    <v-card-text class="text-center">
-                        <div class="time">{{ currentTime }}</div>
-                    </v-card-text>
-                </v-card>
-            </v-col>
-        </v-row>
+      <v-row justify="center">
+        <v-col cols="12" sm="6" md="4">
+          <v-card class="clock-card">
+            <v-card-title class="text-center">Current Time</v-card-title>
+            <v-card-text class="text-center">
+              <div class="time">{{ currentTime }}</div>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
-</template>
-
+  </template>
+  
 <script>
 import { defineComponent, ref } from 'vue';
 
@@ -37,7 +38,17 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.clock-card {
+    width: fit-content;
+    padding: 20px;
+
+}
+
+.v-card {
+    background-color: blue;
+    color: white;
+}
 .time {
-    font-size: 24px;
+    font-size: 40px;
 }
 </style>

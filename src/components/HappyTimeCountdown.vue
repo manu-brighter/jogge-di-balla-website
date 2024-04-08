@@ -2,11 +2,11 @@
     <v-container>
         <v-row justify="center">
             <v-col cols="12" sm="6" md="4">
-                <v-card v-if="startCountdown">
+                <v-card class="countdown-card" v-if="startCountdown">
                     <v-card-title class="text-center">Happy Time</v-card-title>
                     <v-card-text class="text-center">
                         <div class="countdown">
-                            <span>{{ minutes }}</span> : <span>{{ seconds }}</span>
+                            <span>{{ formattedTime(minutes) }}</span> : <span>{{ formattedTime(seconds) }}</span>
                         </div>
                     </v-card-text>
                 </v-card>
@@ -14,6 +14,7 @@
         </v-row>
     </v-container>
 </template>
+
 
 <script>
 import { defineComponent, ref, watchEffect } from 'vue';
@@ -29,7 +30,7 @@ export default defineComponent({
     },
     setup(props, context) {
         const minutes = ref(0);
-        const seconds = ref(10);
+        const seconds = ref(0);
 
         watchEffect(() => {
             if (props.startCountdown) {
@@ -51,12 +52,27 @@ export default defineComponent({
         });
 
         return { minutes, seconds };
+    },
+    methods: {
+        formattedTime(time) {
+            return time < 10 ? `0${time}` : time;
+        }
     }
 });
 </script>
 
 <style scoped>
+.v-card {
+    background-color: red;
+    color: white;
+}
+
+.countdown-card {
+    width: 200px;
+    padding: 20px;
+}
+
 .countdown {
-    font-size: 24px;
+    font-size: 40px;
 }
 </style>

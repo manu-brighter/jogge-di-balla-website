@@ -1,0 +1,58 @@
+// dark-mode.scss
+:root {
+  --v-theme-background: 33, 33, 33; /* Dark background color */
+  --v-theme-background-overlay-multiplier: 1;
+  --v-theme-surface: 33, 33, 33; /* Dark surface color */
+  --v-theme-surface-overlay-multiplier: 1;
+  --v-theme-surface-bright: 33, 33, 33; /* Dark surface bright color */
+  --v-theme-surface-bright-overlay-multiplier: 1;
+  --v-theme-surface-light: 33, 33, 33; /* Dark surface light color */
+  --v-theme-surface-light-overlay-multiplier: 1;
+  --v-theme-surface-variant: 238, 238, 238; /* Dark surface variant color */
+  --v-theme-surface-variant-overlay-multiplier: 2;
+  --v-theme-on-surface-variant: 33, 33, 33; /* Dark on surface variant color */
+  --v-theme-primary: 24, 103, 192; /* Dark primary color */
+  --v-theme-primary-overlay-multiplier: 2;
+  --v-theme-primary-darken-1: 31, 85, 146; /* Dark primary darken color */
+  --v-theme-primary-darken-1-overlay-multiplier: 2;
+  --v-theme-secondary: 72, 169, 166; /* Dark secondary color */
+  --v-theme-secondary-overlay-multiplier: 1;
+  --v-theme-secondary-darken-1: 1, 135, 134; /* Dark secondary darken color */
+  --v-theme-secondary-darken-1-overlay-multiplier: 1;
+  --v-theme-error: 176, 0, 32; /* Dark error color */
+  --v-theme-error-overlay-multiplier: 2;
+  --v-theme-info: 33, 150, 243; /* Dark info color */
+  --v-theme-info-overlay-multiplier: 1;
+  --v-theme-success: 76, 175, 80; /* Dark success color */
+  --v-theme-success-overlay-multiplier: 1;
+  --v-theme-warning: 251, 140, 0; /* Dark warning color */
+  --v-theme-warning-overlay-multiplier: 1;
+  --v-theme-on-background: 255, 255, 255; /* Dark on background color */
+  --v-theme-on-surface: 255, 255, 255; /* Dark on surface color */
+  --v-theme-on-surface-bright: 255, 255, 255; /* Dark on surface bright color */
+  --v-theme-on-surface-light: 255, 255, 255; /* Dark on surface light color */
+  --v-theme-on-primary: 0, 0, 0; /* Dark on primary color */
+  --v-theme-on-primary-darken-1: 0, 0, 0; /* Dark on primary darken color */
+  --v-theme-on-secondary: 0, 0, 0; /* Dark on secondary color */
+  --v-theme-on-secondary-darken-1: 0, 0, 0; /* Dark on secondary darken color */
+  --v-theme-on-error: 255, 255, 255; /* Dark on error color */
+  --v-theme-on-info: 255, 255, 255; /* Dark on info color */
+  --v-theme-on-success: 255, 255, 255; /* Dark on success color */
+  --v-theme-on-warning: 0, 0, 0; /* Dark on warning color */
+  --v-border-color: 255, 255, 255; /* Dark border color */
+  --v-border-opacity: 0.12;
+  --v-high-emphasis-opacity: 0.87;
+  --v-medium-emphasis-opacity: 0.6;
+  --v-disabled-opacity: 0.38;
+  --v-idle-opacity: 0.04;
+  --v-hover-opacity: 0.04;
+  --v-focus-opacity: 0.12;
+  --v-selected-opacity: 0.08;
+  --v-activated-opacity: 0.12;
+  --v-pressed-opacity: 0.12;
+  --v-dragged-opacity: 0.08;
+  --v-theme-kbd: 33, 37, 41; /* Dark keyboard color */
+  --v-theme-on-kbd: 255, 255, 255; /* Dark on keyboard color */
+  --v-theme-code: 245, 245, 245; /* Dark code color */
+  --v-theme-on-code: 0, 0, 0; /* Dark on code color */
+}
