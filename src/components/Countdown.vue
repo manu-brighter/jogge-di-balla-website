@@ -3,16 +3,16 @@
         <v-row justify="center">
             <v-col cols="12" md="6" sm="6">
                 <v-card class="countdown-card">
-                    <v-card-title class="text-center">Countdown to Silvester 2</v-card-title>
+                    <v-card-text class="text-center glow-text">Countdown to Silvester 2</v-card-text>
                     <v-skeleton-loader v-if="isNaN(hours)" type="paragraph"/>
                     <v-card-text v-else class="text-center">
-                        <div class="countdown">
+                        <div class="countdown glow-text">
                             <span>{{ formattedTime(hours) }}:{{ formattedTime(minutes) }}:{{
                                     formattedTime(seconds)
                                 }}</span>
                         </div>
                     </v-card-text>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center glow-text">
                         Next Silvester is: <span>{{ nextSilvesterName }}</span>
                     </v-card-text>
                 </v-card>
@@ -110,7 +110,7 @@ export default defineComponent({
 </script>
 <style scoped>
 .countdown-card {
-    left: -27vh;
+    left: -31vh;
     width: 120vh; /* Adjust width as needed */
     height: 60vh;
     padding: 5vh;
@@ -118,9 +118,16 @@ export default defineComponent({
     margin: 0 auto; /* Center the card horizontally */
 }
 
+.glow-text {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Adjust the values as needed */
+}
+
 .v-card {
-    background-color: green;
-    color: white;
+    background-image: url('@/assets/images/Swiss Flag Blur.png');
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    color: black;
 }
 
 .countdown {
@@ -128,7 +135,7 @@ export default defineComponent({
     margin: 0 auto; /* Center the countdown horizontally */
     display: inline-block; /* Make sure the countdown stays on a single line */
     margin-bottom: 2vh; /* Add space below the countdown */
-    margin-top: 9vh; /* Add space top the countdown */
+    margin-top: 7vh; /* Add space top the countdown */
 }
 
 .text-center {

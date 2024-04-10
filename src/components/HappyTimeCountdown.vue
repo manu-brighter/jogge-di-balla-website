@@ -63,16 +63,23 @@ export default defineComponent({
 
 <style scoped>
 .v-card {
-    background-color: red;
-    color: white;
+    background-color: darkslategray;
+    color: greenyellow;
+    left: -5vh;
 }
 
 .countdown-card {
-    width: 200px;
+    width: 30vh;
+    height: 15vh;
     padding: 20px;
 }
 
+.v-card-title {
+    font-size: 3vh;
+}
+
 .countdown {
-    font-size: 40px;
+    padding-top: 1vh;
+    font-size: 6vh;
 }
 </style>

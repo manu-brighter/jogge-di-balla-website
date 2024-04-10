@@ -38,17 +38,25 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.v-card {
+    background-color: darkslategray;
+    color: greenyellow;
+}
+
 .clock-card {
     width: fit-content;
     padding: 20px;
-
+    margin-right: 14vh;
+    width: 30vh;
+    height: 15vh;
 }
 
-.v-card {
-    background-color: blue;
-    color: white;
+.v-card-title {
+    font-size: 3vh;
 }
+
 .time {
-    font-size: 40px;
+    padding-top: 1vh;
+    font-size: 5vh;
 }
 </style>

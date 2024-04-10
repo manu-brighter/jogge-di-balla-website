@@ -47,6 +47,10 @@ export default {
 </script>
 
 <style lang="scss">
+
+html, body {
+    overflow-y: hidden !important
+}
 .background-container {
     /* Set background image */
     background-image: url('@/assets/images/background-sanft.jpg');
