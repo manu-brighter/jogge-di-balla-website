@@ -1,13 +1,15 @@
 <template>
-    <v-container>
+    <v-container class="fill-height d-flex align-center justify-center" >
         <v-row justify="center">
-            <v-col cols="12" sm="6" md="6">
+            <v-col cols="12" md="6" sm="6">
                 <v-card class="countdown-card">
                     <v-card-title class="text-center">Countdown to Silvester 2</v-card-title>
-                    <v-skeleton-loader v-if="isNaN(hours)" type="paragraph" />
+                    <v-skeleton-loader v-if="isNaN(hours)" type="paragraph"/>
                     <v-card-text v-else class="text-center">
                         <div class="countdown">
-                            <span>{{ formattedTime(hours) }}:{{ formattedTime(minutes) }}:{{ formattedTime(seconds) }}</span>
+                            <span>{{ formattedTime(hours) }}:{{ formattedTime(minutes) }}:{{
+                                    formattedTime(seconds)
+                                }}</span>
                         </div>
                     </v-card-text>
                     <v-card-text class="text-center">
@@ -20,12 +22,10 @@
 </template>
 
 <script>
-import { defineComponent, ref, computed, watchEffect } from 'vue'
+import {defineComponent, ref, computed, watchEffect} from 'vue'
 
 export default defineComponent({
-    components: {
-
-    },
+    components: {},
     setup(props, context) {
         // Current date
         const currentDate = new Date();
@@ -56,7 +56,7 @@ export default defineComponent({
             if (hours === 0 && minutes === 0 && seconds === 0) {
                 context.emit('start-countdown');
             }
-            return { hours, minutes, seconds }
+            return {hours, minutes, seconds}
         }
 
         function changeNextSilvester(newName) {
@@ -69,9 +69,9 @@ export default defineComponent({
         watchEffect(() => {
             const interval = setInterval(() => {
                 const countdownDates = [
-                    { date: greekCountdownDate, region: 'greek' },
-                    { date: swissCountdownDate, region: 'swiss' },
-                    { date: irishCountdownDate, region: 'irish' }
+                    {date: greekCountdownDate, region: 'greek'},
+                    {date: swissCountdownDate, region: 'swiss'},
+                    {date: irishCountdownDate, region: 'irish'}
                 ];
 
                 const now = new Date();
@@ -101,36 +101,38 @@ export default defineComponent({
         }
     },
     methods: {
-    formattedTime(time) {
-      return time < 10 ? `0${time}` : time;
+        formattedTime(time) {
+            return time < 10 ? `0${time}` : time;
+        }
     }
-  }
 
 })
 </script>
-
 <style scoped>
 .countdown-card {
-  width: 1000px; /* Adjust width as needed */
-  padding: 20px;
-  text-align: center; /* Center align the content */
-  margin: 0 auto !important; /* Center the card horizontally */
+    left: -27vh;
+    width: 120vh; /* Adjust width as needed */
+    height: 60vh;
+    padding: 5vh;
+    text-align: center; /* Center align the content */
+    margin: 0 auto; /* Center the card horizontally */
 }
 
 .v-card {
-  background-color: green;
-  color: white;
+    background-color: green;
+    color: white;
 }
 
 .countdown {
-  font-size: 200px;
-  display: inline-block; /* Make sure the countdown stays on a single line */
-  margin-top: 60px;
-  margin-bottom: 20px; /* Add space below the countdown */
+    font-size: 24vh;
+    margin: 0 auto; /* Center the countdown horizontally */
+    display: inline-block; /* Make sure the countdown stays on a single line */
+    margin-bottom: 2vh; /* Add space below the countdown */
+    margin-top: 9vh; /* Add space top the countdown */
 }
 
 .text-center {
-  margin: 20px;
-  font-size: 50px;
+    margin: 4vh;
+    font-size: 7vh;
 }
 </style>
