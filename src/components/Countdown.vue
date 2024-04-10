@@ -128,6 +128,7 @@ export default defineComponent({
     background-position: center;
     background-color: transparent;
     color: black;
+    margin-top: 7vh;
 }
 
 .countdown {
