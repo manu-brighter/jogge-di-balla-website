@@ -4,7 +4,7 @@
       <v-row justify="center">
         <v-col cols="12" sm="6" md="4">
           <v-card class="clock-card">
-            <v-card-text class="text-center glow-text">Current Time</v-card-text>
+            <v-card-text class="text-center glow-text">Uhrzeit MESZ</v-card-text>
             <v-card-text class="text-center">
               <div class="time glow-text">{{ currentTime }}</div>
             </v-card-text>

@@ -7,7 +7,7 @@
 
         <!-- HappyTimeCountdown in the top-left corner -->
         <div class="happycountdown-container">
-            <HappyTimeCountdown @countdown-finished="handleCountdownFinished" :startCountdown="/*startCountdown*/true" />
+            <HappyTimeCountdown @countdown-finished="handleCountdownFinished" :startCountdown="this.startCountdown" />
         </div>
 
         <!-- Countdown in the center of the screen -->

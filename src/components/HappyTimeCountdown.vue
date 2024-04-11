@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container v-if="minutes === 0 && seconds === 0">
         <v-row justify="center">
             <v-col cols="12" sm="6" md="4">
                 <v-card class="countdown-card" v-if="startCountdown">
@@ -12,6 +12,9 @@
                 </v-card>
             </v-col>
         </v-row>
+    </v-container>
+    <v-container v-else>
+        <v-img src="/assets/images/Website Pics/miniongif3.gif"></v-img>
     </v-container>
 </template>
 
@@ -29,7 +32,7 @@ export default defineComponent({
     components: {
     },
     setup(props, context) {
-        const minutes = ref(0);
+        const minutes = ref(15);
         const seconds = ref(0);
 
         watchEffect(() => {
