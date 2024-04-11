@@ -70,7 +70,7 @@ html, body {
     /* Ensure clock is above other elements */
 }
 
-.countdown-container {
+.happycountdown-container {
     position: fixed;
     top: 20px;
     /* Adjust the top position as needed */
@@ -116,7 +116,7 @@ html, body {
 
     .countdown-center {
         position: fixed;
-        top: calc(25%); /* Adjust as needed */
+        top: calc(25%);
         left: 117%;
         transform: translateX(-50%);
         z-index: 1000;
