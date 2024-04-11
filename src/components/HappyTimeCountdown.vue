@@ -86,4 +86,14 @@ export default defineComponent({
 .glow-text {
     text-shadow: 0 0 30px black; /* Adjust the values as needed */
 }
+@media only screen and (max-width: 768px) {
+    .countdown-card {
+        width: 80vw; /* Adjust width as needed */
+        height: 16vh; /* Adjust height as needed */
+        padding: 2vw; /* Adjust padding as needed */
+    }
+    .text-center {
+        font-size: 7vw; /* Adjust font size as needed */
+    }
+}
 </style>

@@ -151,4 +151,29 @@ export default defineComponent({
 .background-image3 {
     background-image: url('@/assets/images/greek Flag Blur.png');
 }
+
+@media only screen and (max-width: 768px) {
+    .countdown-card {
+        width: 80vw; /* Adjust width as needed */
+        height: 40vh; /* Adjust height as needed */
+        padding: 0px;
+        margin: 0px;
+
+    }
+    .countdown {
+        font-size: 14vw; /* Adjust font size as needed */
+    }
+    .text-center {
+        font-size: 8vw; /* Adjust font size as needed */
+        width: 80vw;
+    }
+    .v-card-text {
+        padding-left: 0px;
+        margin-left: 0px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+}
 </style>

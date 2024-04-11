@@ -6,7 +6,7 @@
         </div>
 
         <!-- HappyTimeCountdown in the top-left corner -->
-        <div class="countdown-container">
+        <div class="happycountdown-container">
             <HappyTimeCountdown @countdown-finished="handleCountdownFinished" :startCountdown="/*startCountdown*/true" />
         </div>
 
@@ -86,4 +86,41 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@media only screen and (max-width: 768px) {
+
+    body {
+        background-image: url('@/assets/images/background-sanft-phone.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+
+    .happycountdown-container {
+        position: fixed;
+        top: 86%;
+        left:60%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+
+    .clock-container {
+        position: fixed;
+        top: 2vh;
+        left: 30%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+
+    .countdown-center {
+        position: fixed;
+        top: calc(25%); /* Adjust as needed */
+        left: 117%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+}
+
 </style>
