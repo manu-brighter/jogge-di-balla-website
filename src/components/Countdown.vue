@@ -2,7 +2,7 @@
     <v-container class="fill-height d-flex align-center justify-center" >
         <v-row justify="center">
             <v-col cols="12" md="6" sm="6">
-                <v-card class="countdown-card">
+                <v-card :class="{'countdown-card': true,  'background-image1': nextSilvesterName === 'irish', 'background-image2': nextSilvesterName === 'swiss', 'background-image3': nextSilvesterName === 'greek'}">
                     <v-card-text class="text-center glow-text">Countdown to Silvester 2</v-card-text>
                     <v-skeleton-loader v-if="isNaN(hours)" type="paragraph"/>
                     <v-card-text v-else class="text-center">
@@ -22,41 +22,36 @@
 </template>
 
 <script>
-import {defineComponent, ref, computed, watchEffect} from 'vue'
+import { defineComponent, ref, computed, watchEffect } from 'vue';
 
 export default defineComponent({
-    components: {},
     setup(props, context) {
-        // Current date
         const currentDate = new Date();
 
-        // Tomorrow's date at 00:00:00
         const swissCountdownDate = new Date();
         swissCountdownDate.setDate(currentDate.getDate());
-        swissCountdownDate.setHours(24, 0, 1, 0); // set silvester time here
+        swissCountdownDate.setHours(24, 0, 1, 0);
 
-        // One hour before
-        const greekCountdownDate = new Date();
-        greekCountdownDate.setTime(swissCountdownDate.getTime() - (1 * 60 * 60 * 1000));
-
-        // One hour ahead
         const irishCountdownDate = new Date();
-        irishCountdownDate.setTime(swissCountdownDate.getTime() + (1 * 60 * 60 * 1000));
+        irishCountdownDate.setTime(swissCountdownDate.getTime() - (1 * 60 * 60 * 1000));
 
-        const timeRemaining = ref(getTimeRemaining())
+        const greekCountdownDate = new Date();
+        greekCountdownDate.setTime(swissCountdownDate.getTime() + (1 * 60 * 60 * 1000));
+
+        const timeRemaining = ref(getTimeRemaining());
         const nextSilvesterName = ref('');
 
         function getTimeRemaining(nextSilvesterDate) {
-            const now = new Date().getTime()
+            const now = new Date().getTime();
 
-            const difference = nextSilvesterDate - now
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000)
+            const difference = nextSilvesterDate - now;
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
             if (hours === 0 && minutes === 0 && seconds === 0) {
                 context.emit('start-countdown');
             }
-            return {hours, minutes, seconds}
+            return { hours, minutes, seconds };
         }
 
         function changeNextSilvester(newName) {
@@ -65,13 +60,12 @@ export default defineComponent({
             }
         }
 
-
         watchEffect(() => {
             const interval = setInterval(() => {
                 const countdownDates = [
-                    {date: greekCountdownDate, region: 'greek'},
-                    {date: swissCountdownDate, region: 'swiss'},
-                    {date: irishCountdownDate, region: 'irish'}
+                    { date: irishCountdownDate, region: 'irish' },
+                    { date: swissCountdownDate, region: 'swiss' },
+                    { date: greekCountdownDate, region: 'greek' }
                 ];
 
                 const now = new Date();
@@ -83,31 +77,36 @@ export default defineComponent({
                         break;
                     }
                 }
+            }, 1000);
 
-            }, 1000)
+            return () => clearInterval(interval);
+        });
 
-            return () => clearInterval(interval)
-        })
+        const hours = computed(() => timeRemaining.value.hours);
+        const minutes = computed(() => timeRemaining.value.minutes);
+        const seconds = computed(() => timeRemaining.value.seconds);
 
-        const hours = computed(() => timeRemaining.value.hours)
-        const minutes = computed(() => timeRemaining.value.minutes)
-        const seconds = computed(() => timeRemaining.value.seconds)
+        const backgroundImageUrl = computed(() => {
+            return '@/assets/images/Greece Flag.png'
+            return `@/assets/images/${nextSilvesterName.value} Flag Blur.png`;
+        });
 
         return {
             hours,
             minutes,
             seconds,
-            nextSilvesterName
-        }
+            nextSilvesterName,
+            backgroundImageUrl
+        };
     },
     methods: {
         formattedTime(time) {
             return time < 10 ? `0${time}` : time;
         }
     }
-
-})
+});
 </script>
+
 <style scoped>
 .countdown-card {
     left: -31vh;
@@ -122,11 +121,22 @@ export default defineComponent({
     text-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Adjust the values as needed */
 }
 
+.background-image1 {
+    background-image: url('@/assets/images/irish Flag Blur.png');
+}
+
+.background-image2 {
+    background-image: url('@/assets/images/swiss Flag Blur.png');
+}
+.background-image3 {
+    background-image: url('@/assets/images/greek Flag Blur.png');
+}
+
 .v-card {
-    background-image: url('@/assets/images/Swiss Flag Blur.png');
+    /*background-image: url('@/assets/images/swiss Flag Blur.png');*/
     background-size: cover;
     background-position: center;
-    background-color: transparent;
+    /*background-color: transparent;*/
     color: black;
     margin-top: 7vh;
 }
