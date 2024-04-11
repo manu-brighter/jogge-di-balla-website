@@ -155,7 +155,7 @@ export default defineComponent({
 @media only screen and (max-width: 768px) {
     .countdown-card {
         width: 80vw; /* Adjust width as needed */
-        height: 40vh; /* Adjust height as needed */
+        height: 45vh; /* Adjust height as needed */
         padding: 0px;
         margin: 0px;
 
@@ -170,7 +170,7 @@ export default defineComponent({
     .v-card-text {
         padding-left: 0px;
         margin-left: 0px;
-        margin-top: 20px;
+        margin-top: 8px;
         margin-bottom: 10px;
         padding-top: 10px;
         padding-bottom: 20px;

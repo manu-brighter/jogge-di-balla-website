@@ -117,7 +117,7 @@ html, body {
     .countdown-center {
         position: fixed;
         top: calc(25%);
-        left: 108%;
+        left: 107%;
         transform: translateX(-50%);
         z-index: 1000;
     }
