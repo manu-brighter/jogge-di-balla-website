@@ -118,26 +118,13 @@ export default defineComponent({
 }
 
 .glow-text {
-    text-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Adjust the values as needed */
-}
-
-.background-image1 {
-    background-image: url('@/assets/images/irish Flag Blur.png');
-}
-
-.background-image2 {
-    background-image: url('@/assets/images/swiss Flag Blur.png');
-}
-.background-image3 {
-    background-image: url('@/assets/images/greek Flag Blur.png');
+    text-shadow: 0 0 30px black; /* Adjust the values as needed */
 }
 
 .v-card {
-    /*background-image: url('@/assets/images/swiss Flag Blur.png');*/
     background-size: cover;
     background-position: center;
-    /*background-color: transparent;*/
-    color: black;
+    color: navajowhite;
     margin-top: 7vh;
 }
 
@@ -152,5 +139,16 @@ export default defineComponent({
 .text-center {
     margin: 4vh;
     font-size: 7vh;
+}
+
+.background-image1 {
+    background-image: url('@/assets/images/irish Flag Blur.png');
+}
+
+.background-image2 {
+    background-image: url('@/assets/images/swiss Flag Blur.png');
+}
+.background-image3 {
+    background-image: url('@/assets/images/greek Flag Blur.png');
 }
 </style>

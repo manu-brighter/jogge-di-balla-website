@@ -4,9 +4,9 @@
       <v-row justify="center">
         <v-col cols="12" sm="6" md="4">
           <v-card class="clock-card">
-            <v-card-title class="text-center">Current Time</v-card-title>
+            <v-card-text class="text-center glow-text">Current Time</v-card-text>
             <v-card-text class="text-center">
-              <div class="time">{{ currentTime }}</div>
+              <div class="time glow-text">{{ currentTime }}</div>
             </v-card-text>
           </v-card>
         </v-col>
@@ -39,8 +39,8 @@ export default defineComponent({
 
 <style scoped>
 .v-card {
-    background-color: darkslategray;
-    color: greenyellow;
+    background-color: darkslategrey;
+    color: navajowhite;
 }
 
 .clock-card {
@@ -51,12 +51,16 @@ export default defineComponent({
     height: 15vh;
 }
 
-.v-card-title {
+.v-card-text {
     font-size: 3vh;
 }
 
 .time {
-    padding-top: 1vh;
+    padding-top: 0vh;
     font-size: 5vh;
+}
+
+.glow-text {
+    text-shadow: 0 0 30px black; /* Adjust the values as needed */
 }
 </style>

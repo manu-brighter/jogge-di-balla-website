@@ -3,9 +3,9 @@
         <v-row justify="center">
             <v-col cols="12" sm="6" md="4">
                 <v-card class="countdown-card" v-if="startCountdown">
-                    <v-card-title class="text-center">Happy Time</v-card-title>
+                    <v-card-text class="text-center glow-text">Happy Time</v-card-text>
                     <v-card-text class="text-center">
-                        <div class="countdown">
+                        <div class="countdown glow-text">
                             <span>{{ formattedTime(minutes) }}</span> : <span>{{ formattedTime(seconds) }}</span>
                         </div>
                     </v-card-text>
@@ -63,8 +63,8 @@ export default defineComponent({
 
 <style scoped>
 .v-card {
-    background-color: darkslategray;
-    color: greenyellow;
+    background-color: darkslategrey;
+    color: navajowhite;
     left: -5vh;
 }
 
@@ -74,12 +74,16 @@ export default defineComponent({
     padding: 20px;
 }
 
-.v-card-title {
+.v-card-text {
     font-size: 3vh;
 }
 
 .countdown {
-    padding-top: 1vh;
+    padding-top: 0vh;
     font-size: 6vh;
+}
+
+.glow-text {
+    text-shadow: 0 0 30px black; /* Adjust the values as needed */
 }
 </style>
