@@ -33,7 +33,7 @@ export default defineComponent({
 
         const swissCountdownDate = new Date();
         swissCountdownDate.setDate(currentDate.getDate());
-        swissCountdownDate.setHours(13, 1, 1, 0);
+        swissCountdownDate.setHours(24, 0, 1, 0);
 
         const irishCountdownDate = new Date();
         irishCountdownDate.setTime(swissCountdownDate.getTime() - (1 * 60 * 60 * 1000));
@@ -177,7 +177,7 @@ export default defineComponent({
     background-image: url('@/assets/images/greek Flag Blur.png');
 }
  .background-image4 {
-     background-image: url('@/assets/images/Logo/Logo Blur.jpg');
+     background-image: url('@/assets/images/Logo/Logo Blur 2.jpg');
  }
 
 @media only screen and (max-width: 768px) {
