@@ -4,7 +4,12 @@
             <v-col cols="12" md="6" sm="6">
                 <v-card :class="['countdown-card', backgroundImageClass]">
                     <v-card-text class="text-center glow-text">Countdown zum Silvester 2.0</v-card-text>
-                    <v-skeleton-loader v-if="isNaN(hours)" type="paragraph"/>
+<!--                    <v-skeleton-loader v-if="isNaN(hours)" type="paragraph"/>-->
+                    <v-card-text v-if="isNaN(hours)">
+                        <div class="countdown glow-text">
+                            <span>00:00:00</span>
+                        </div>
+                    </v-card-text>
                     <v-card-text v-else class="text-center">
                         <div class="countdown glow-text">
                             <span>{{ formattedTime(hours) }}:{{ formattedTime(minutes) }}:{{ formattedTime(seconds) }}</span>
@@ -28,7 +33,7 @@ export default defineComponent({
 
         const swissCountdownDate = new Date();
         swissCountdownDate.setDate(currentDate.getDate());
-        swissCountdownDate.setHours(16, 20, 0, 0);
+        swissCountdownDate.setHours(13, 1, 1, 0);
 
         const irishCountdownDate = new Date();
         irishCountdownDate.setTime(swissCountdownDate.getTime() - (1 * 60 * 60 * 1000));
@@ -47,7 +52,6 @@ export default defineComponent({
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
             if (hours === 0 && minutes === 0 && seconds === 0) {
-                console.log("lkjasdfkjhfkj")
                 context.emit('start-countdown');
             }
             return { hours, minutes, seconds };
@@ -107,7 +111,7 @@ export default defineComponent({
                 case 'greek':
                     return 'background-image3';
                 default:
-                    return '';
+                    return 'background-image4';
             }
         });
 
@@ -172,6 +176,9 @@ export default defineComponent({
 .background-image3 {
     background-image: url('@/assets/images/greek Flag Blur.png');
 }
+ .background-image4 {
+     background-image: url('@/assets/images/Logo/Logo Blur.jpg');
+ }
 
 @media only screen and (max-width: 768px) {
     .countdown-card {

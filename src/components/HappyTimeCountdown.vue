@@ -1,5 +1,5 @@
 <template>
-    <v-container v-if="minutes === 0 && seconds === 0">
+    <v-container v-if="minutes !== 0 && seconds !== 0">
         <v-row justify="center">
             <v-col cols="12" sm="6" md="4">
                 <v-card class="countdown-card" v-if="startCountdown">
@@ -28,8 +28,6 @@ export default defineComponent({
             type: Boolean,
             default: false
         }
-    },
-    components: {
     },
     setup(props, context) {
         const minutes = ref(15);
