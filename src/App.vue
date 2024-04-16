@@ -1,19 +1,7 @@
 <template>
     <main class="background-container">
-        <!-- Clock in the top-right corner -->
-        <div class="clock-container">
-            <Clock />
-        </div>
+        <img src="@/assets/images/IMG_8468.jpg" alt=""></img>
 
-        <!-- HappyTimeCountdown in the top-left corner -->
-        <div class="happycountdown-container">
-            <HappyTimeCountdown @countdown-finished="handleCountdownFinished" :startCountdown="this.startCountdown" />
-        </div>
-
-        <!-- Countdown in the center of the screen -->
-        <div class="countdown-center">
-            <Countdown @start-countdown="handleStartCountdown" />
-        </div>
     </main>
 </template>
 
